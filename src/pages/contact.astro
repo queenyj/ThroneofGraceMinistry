@@ -1,0 +1,19 @@
+---
+import Site from '../layouts/Site.astro';
+
+const email = import.meta.env.MINISTRY_CONTACT_EMAIL?.trim();
+---
+<Site title="Contact" description="Contact Throne of Grace Ministry with a question or prayer request.">
+  <section class="page-intro"><div class="wrap">
+    <h1>Contact</h1>
+    <p class="lead">Get in touch with Throne of Grace Ministry.</p>
+  </div></section>
+  <section class="wrap section reading">
+    <h2>Questions and prayer requests</h2>
+    {email ? (
+      <p>Email us at <a class="text-link" href={`mailto:${email}`}>{email}</a>.</p>
+    ) : (
+      <p>Contact details are currently unavailable.</p>
+    )}
+  </section>
+</Site>

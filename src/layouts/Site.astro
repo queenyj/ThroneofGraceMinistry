@@ -1,0 +1,51 @@
+---
+import '../styles/site.css';
+
+interface Props {
+  title: string;
+  description: string;
+  home?: boolean;
+}
+
+const { title, description, home = false } = Astro.props;
+const ministry = 'Throne of Grace Ministry';
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/praise/', label: 'Praise' },
+  { href: '/about-god/', label: 'About God' },
+  { href: '/contact/', label: 'Contact' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#202d27" />
+    <title>{home ? ministry : `${title} | ${ministry}`}</title>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/" aria-label={ministry}>
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Throne of Grace<small>Ministry</small></span>
+        </a>
+        <nav aria-label="Main navigation">
+          {links.map(({ href, label }) => (
+            <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <span>{ministry}</span>
+        <span>Hebrews 4:16</span>
+      </div>
+    </footer>
+  </body>
+</html>
