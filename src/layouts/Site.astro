@@ -9,6 +9,7 @@ interface Props {
 
 const { title, description, home = false } = Astro.props;
 const ministry = 'Throne of Grace Ministry';
+const rewardPath = '/praise/exceedingly-great-reward/';
 const links = [
   { href: '/', label: 'Home' },
   { href: '/praise/', label: 'Praise' },
@@ -34,7 +35,19 @@ const links = [
           <span>Throne of Grace<small>Ministry</small></span>
         </a>
         <nav aria-label="Main navigation">
-          {links.map(({ href, label }) => (
+          {links.map(({ href, label }) => href === '/praise/' ? (
+            <div class="nav-group">
+              <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>
+              <details class="nav-dropdown">
+                <summary aria-label="Praise submenu"></summary>
+                <div class="nav-submenu">
+                  <a href={rewardPath} aria-current={Astro.url.pathname === rewardPath ? 'page' : undefined}>
+                    Exceedingly great reward
+                  </a>
+                </div>
+              </details>
+            </div>
+          ) : (
             <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>
           ))}
         </nav>
