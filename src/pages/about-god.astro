@@ -38,12 +38,16 @@ const statements = [
     <h2>God invites us to draw near</h2>
     <p>Hebrews 4:14–16 points to Jesus as our high priest and invites us to approach God with confidence, trusting that we will find mercy and grace.</p>
     <h2>Who Jesus is</h2>
-    <p>The Scripture references below link to the New King James Version (NKJV).</p>
+    <p>The Scripture references below open in a new tab in the New King James Version (NKJV).</p>
     <ul>
       {statements.map(({ text, reference }) => (
         <li>
           {text}{' '}
-          <a href={`https://www.biblegateway.com/passage/?search=${encodeURIComponent(reference.replace('–', '-'))}&version=NKJV`}>
+          <a
+            href={`https://www.biblegateway.com/passage/?search=${encodeURIComponent(reference.replace('–', '-'))}&version=NKJV`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {reference}
           </a>
         </li>
