@@ -1,5 +1,24 @@
 ---
 import Site from '../layouts/Site.astro';
+
+const statements = [
+  { text: 'Jesus is the Lord.', reference: 'Philippians 2:11' },
+  { text: 'Jesus is the King.', reference: 'Revelation 19:16' },
+  { text: 'Jesus is the Way.', reference: 'John 14:6' },
+  { text: 'Jesus is the Truth.', reference: 'John 14:6' },
+  { text: 'Jesus is the Rock.', reference: '1 Corinthians 10:4' },
+  { text: 'Jesus is the Healer.', reference: 'Matthew 8:16–17' },
+  { text: 'Jesus is the Redeemer.', reference: 'Galatians 3:13' },
+  { text: 'Jesus is the Life.', reference: 'John 14:6' },
+  { text: 'Jesus is the Mighty God.', reference: 'Isaiah 9:6' },
+  { text: 'Jesus is the Lamb of God.', reference: 'John 1:29' },
+  { text: 'Jesus is the True God.', reference: '1 John 5:20' },
+  { text: 'Jesus is the Light in the Darkness.', reference: 'John 1:4–5' },
+  { text: 'Jesus is the Way to Heaven.', reference: 'John 14:2–6' },
+  { text: 'Jesus is the Miracle Worker.', reference: 'John 20:30–31' },
+  { text: 'Jesus is the Prince of Peace.', reference: 'Isaiah 9:6' },
+  { text: "Jesus is the Commander of the Lord's Army.", reference: 'Joshua 5:13–15' },
+];
 ---
 <Site title="About God" description="Explore what the Bible says about God’s love, grace, and nearness.">
   <section class="page-intro page-intro-compact"><div class="wrap">
@@ -13,6 +32,19 @@ import Site from '../layouts/Site.astro';
     <p>Ephesians 2:8–9 describes salvation as God’s gift, received through faith.</p>
     <h2>God invites us to draw near</h2>
     <p>Hebrews 4:14–16 points to Jesus as our high priest and invites us to approach God with confidence, trusting that we will find mercy and grace.</p>
+    <h2>Who Jesus is</h2>
+    <p>The Scripture references below link to the New King James Version (NKJV).</p>
+    <ul>
+      {statements.map(({ text, reference }) => (
+        <li>
+          {text}{' '}
+          <a href={`https://www.biblegateway.com/passage/?search=${encodeURIComponent(reference.replace('–', '-'))}&version=NKJV`}>
+            {reference}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p>Some Christians understand the commander who appears to Joshua as Christ appearing before his birth.</p>
     <a class="text-link" href="/praise/">Spend a moment in praise</a>
   </section>
 </Site>
