@@ -72,7 +72,7 @@ figcaption { margin-top: 1rem; }
 .cards a, .text-link { font-weight: 700; overflow-wrap: anywhere; }
 .cards a { margin-top: auto; }
 .page-intro { padding-block: clamp(2.75rem, 7vw, 5.5rem); }
-.page-intro-compact { padding-block: clamp(1.375rem, 3.5vw, 2.75rem); }
+.page-intro-compact { padding-block: clamp(.6875rem, 1.75vw, 1.375rem); }
 .page-intro h1 { font-size: clamp(3rem, 7vw, 5.5rem); }
 .reading > * { max-width: 45rem; }
 .reading h2:not(:first-child) { margin-top: 2rem; }
