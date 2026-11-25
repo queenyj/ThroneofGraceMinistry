@@ -47,7 +47,7 @@ h2 { font-size: clamp(1.9rem, 3.5vw, 3rem); line-height: 1.14; letter-spacing: -
 h3 { font-size: 1.65rem; line-height: 1.2; }
 .hero, .page-intro { color: var(--paper); background: radial-gradient(ellipse at 85% 15%, #594175, transparent 65%), var(--ink); }
 .hero-inner { display: grid; grid-template-columns: 1.15fr .85fr; align-items: end; gap: clamp(2rem, 7vw, 6rem); padding-block: clamp(3.5rem, 8vw, 7.5rem); }
-.hero-copy h1 { font-size: clamp(.558rem, 1.53vw, 1.332rem); }
+.hero-copy h1 { font-size: clamp(.837rem, 2.295vw, 1.998rem); }
 .eyebrow, figcaption { color: var(--lavender); font-size: .875rem; font-weight: 650; letter-spacing: .07em; }
 .eyebrow {
   margin-bottom: 1.4rem;
