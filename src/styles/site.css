@@ -51,7 +51,7 @@ h3 { font-size: 1.65rem; line-height: 1.2; }
 .eyebrow, figcaption { color: var(--lavender); font-size: .875rem; font-weight: 650; letter-spacing: .07em; }
 .eyebrow {
   margin-bottom: 1.4rem;
-  font-size: clamp(1.2rem, 2.6vw, 2rem);
+  font-size: clamp(3rem, 6.5vw, 5rem);
   line-height: 1.3;
   letter-spacing: .02em;
   text-wrap: balance;
